@@ -8,9 +8,9 @@
 
     //PHP INCLUDES
 	
-    include 'Includes/functions/functions.php'; 
-    include 'Includes/templates/header.php';
-    include 'Includes/templates/navbar.php';
+    include '../NhanVien123/Includes/functions/functions.php'; 
+    include '../NhanVien123/Includes/templates/header.php';
+    include '../NhanVien123/Includes/templates/navbar.php';
 	
     	?>
 

@@ -1,16 +1,26 @@
 		
-			
-
-
-				</div><!-- inside-page -->
-			</section><!-- content-wrapper -->
-		</div><!-- content -->
+		<footer class="footer_section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 xs-padding">
+						<div class="copyright">
+							© 
+							<script type="text/javascript"> 
+								document.write(new Date().getFullYear())
+							</script>
+							 Bản quyền thuộc về nhóm Vô Tri
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</footer>
 
 	
 		<!-- INCLUDE JS SCRIPTS -->
 
 		<script src="Design/js/jquery.min.js"></script>
-		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script src="Design/js/bootstrap.min.js"></script>
 		<script src="Design/js/bootstrap.bundle.min.js"></script>
 		<script src="Design/js/main.js"></script>
 

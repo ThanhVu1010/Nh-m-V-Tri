@@ -6,17 +6,14 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
-		
+		<meta name="author" content="JAIRI IDRISS">
 		<title><?php getTitle(); ?></title>
 
 		<!-- EXTERNAL CSS LINKS -->
 
-		<link rel="stylesheet" type="text/css" href="Design/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="Design/fonts/css/all.min.css">
-		<link rel="stylesheet" type="text/css" href="Design/css/main.css">
-		<link rel="stylesheet" type="text/css" href="Design/css/responsive.css">
-        
-        <script src="Design/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../../NhanVien123/Includes/templates/Design/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../../../NhanVien123/Includes/templates/Design/fonts/css/all.min.css">
+		<link rel="stylesheet" type="text/css" href="../../../NhanVien123/Includes/templates/Design/css/main.css">
 
 		<!-- GOOGLE FONTS -->
 

@@ -1,6 +1,8 @@
 <!-- PHP INCLUDES -->
 
 <?php
+    //Set page title
+    $pageTitle = 'Thực đơn';
 
     include "connect.php";
     include 'Includes/functions/functions.php';
@@ -8,95 +10,193 @@
     include "Includes/templates/navbar.php";
 
 
-
 ?>
 
-	<!-- HOME SECTION -->
+    <!-- ORDER FOOD PAGE STYLE -->
 
-	<section class="home-section" id="home">
+	<style type="text/css">
+        body
+        {
+            background: #f7f7f7;
+        }
+
+		.text_header
+		{
+			margin-bottom: 5px;
+    		font-size: 18px;
+    		font-weight: bold;
+    		line-height: 1.5;
+    		margin-top: 22px;
+    		text-transform: capitalize;
+		}
+
+        .items_tab
+        {
+            border-radius: 4px;
+            background-color: white;
+            overflow: hidden;
+            box-shadow: 0 0 5px 0 rgba(60, 66, 87, 0.04), 0 0 10px 0 rgba(0, 0, 0, 0.04);
+        }
+
+        .itemListElement
+        {
+            font-size: 14px;
+            line-height: 1.29;
+            border-bottom: solid 1px #e5e5e5;
+            cursor: pointer;
+            padding: 16px 12px 18px 12px;
+        }
+
+        .item_details
+        {
+            width: auto;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -webkit-flex-direction: row;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+        }
+
+        .item_label
+        {
+        	color: #9e8a78;
+            border-color: #9e8a78;
+            background: white;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active 
+        {
+            color: #fff;
+            background-color: #9e8a78;
+            border-color: #9e8a78;
+        }
+
+        .item_select_part
+        {
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .select_item_bttn
+        {
+            width: 55px;
+            display: flex;
+            margin-left: 30px;
+            -webkit-box-pack: end;
+            justify-content: flex-end;
+        }
+
+        .menu_price_field
+        {
+        	width: auto;
+            display: flex;
+            margin-left: 30px;
+            -webkit-box-align: baseline;
+            align-items: baseline;
+        }
+
+        .order_food_section
+        {
+            max-width: 720px;
+            margin: 50px auto;
+            padding: 0px 15px;
+        }
+
+        .item_label.focus,
+        .item_label:focus
+        {
+            outline: none;
+            background:initial;
+            box-shadow: none;
+            color: #9e8a78;
+            border-color: #9e8a78;
+        }
+
+        .item_label:hover
+        {
+            color: #fff;
+            background-color: #9e8a78;
+            border-color: #9e8a78;
+        }
+
+        /* Make circles that indicate the steps of the form: */
+        .step 
+        {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbbbbb;
+            border: none;  
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.5;
+        }
+
+        .step.active 
+        {
+            opacity: 1;
+        }
+
+        /* Mark the steps that are finished and valid: */
+        .step.finish 
+        {
+            background-color: #4CAF50;
+        }
+
+
+        .order_food_tab
+        {
+            display: none;
+        }
+
+        .next_prev_buttons
+        {
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .client_details_tab  .form-control
+        {
+            background-color: #fff;
+            border-radius: 0;
+            padding: 25px 10px;
+            box-shadow: none;
+            border: 2px solid #eee;
+        }
+
+        .client_details_tab  .form-control:focus 
+        {
+            border-color: #ffc851;
+            box-shadow: none;
+            outline: none;
+        }
+	
+
+	</style>
+
+<section class="our_menus" id="menus">
 		<div class="container">
-			<div class="row" style="flex-wrap: nowrap;">
-				<div class="col-md-6 home-left-section">
-					<div style="padding: 100px 0px; color: white;">
-						<h1>
-							Công ty Vô Tri
-						</h1>
-                        <hr>
-						<h5>
-							Hệ thống bếp ăn của công ty Vô Tri cam kết đem lại cho nhân viên công ty những bữa ăn chất lượng và đầy đủ dinh dưỡng
-						</h5>
-                        <hr>
-						<div style="display: flex;">
-							<a href="order_food.php" target="_blank" class="bttn_style_1" style="margin-right: 10px; display: flex;justify-content: center;align-items: center;">
-								Đặt món 
-								<i class="fas fa-angle-right"></i><i class="fas fa-angle-right"></i>
-							</a>
-							<a href="thưcdon.php" class="bttn_style_2" style="display: flex;justify-content: center;align-items: center;">
-								Xem Thực đơn
-								<i class="fas fa-angle-right"></i><i class="fas fa-angle-right"></i>
-							</a>
-						</div>
-					</div>
-				</div>
-               
-			</div>
-		</div>
-	</section>
-
-	<!-- OUR QUALITIES SECTION -->
-
-	<section class="our_qualities" style="padding:100px 0px;">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="our_qualities_column">
-	                    <img src="Design/images/quality_food_img.png" >
-	                    <div class="caption">
-	                        <h3>
-	                            Thực đơn buổi sáng 
-	                        </h3>
-	                        <p>
-							"Thực đơn sáng tạo, đánh thức vị giác và năng lượng!"
-	                        </p>
-	                    </div>
-	                </div>
-				</div>
-				<div class="col-md-4">
-					<div class="our_qualities_column">
-	                    <img src="Design/images/fast_delivery_img.png" >
-	                    <div class="caption">
-	                        <h3>
-	                            Thực đơn buổi trưa
-	                        </h3>
-	                        <p>
-							"Trải nghiệm hương vị tuyệt vời tại buổi trưa với chúng tôi!"
-	                        </p>
-	                    </div>
-	                </div>
-				</div>
-				<div class="col-md-4">
-					<div class="our_qualities_column">
-	                    <img src="Design/images/original_taste_img.png" >
-	                    <div class="caption">
-	                        <h3>
-	                            Thực đơn buổi chiều
-	                        </h3>
-	                        <p>
-							"Thực đơn đa dạng, hấp dẫn cho mọi khẩu vị vào buổi chiều!"
-	                        </p>
-	                    </div>
-	                </div>
-				</div>
-
-			</div>
-		</div>
-	</section>
-
-	<!-- OUR MENUS SECTION -->
-
-	<section class="our_menus" id="menus">
-		<div class="container">
-			<h2 style="text-align: center;margin-bottom: 30px">KHÁM PHÁ MENU CỦA CHÚNG TÔI</h2>
+			<h2 style="text-align: center;margin-bottom: 30px">THỰC ĐƠN TRONG TUẦN</h2>
 			<div class="menus_tabs">
 				<div class="menus_tabs_picker">
 					<ul style="text-align: center;margin-bottom: 70px">
@@ -180,9 +280,9 @@
 	                                                        	<?php echo number_format($menu['gia'], 0, ',', '.') . " VND"; ?>
 	                                                        </span>
                                                             <div class="buttondatmon">
-																<a href="order_food.php">
-																	<button class="btn btn-danger btn-icon" style="margin: 5px 0;" type="button">Đặt món</button>	
-																</a>
+																<label class="menu_label item_label btn btn-secondary ">
+																	<input type="checkbox"  name="selected_menus[]" value="<?php echo $row['idthucdon'] ?>" autocomplete="off">Đặt món
+																</label>
 															</div>
 	                                                    </div>
 														
@@ -235,9 +335,9 @@
 	                                                        	<?php echo number_format($menu['gia'], 0, ',', '.') . " VND"; ?>
 	                                                        </span>
                                                             <div class="buttondatmon">
-																<a href="order_food.php">
-																	<button class="btn btn-danger btn-icon" style="margin: 5px 0;" type="button">Đặt món</button>	
-																</a>
+																<label class="menu_label item_label btn btn-secondary">
+																	<input type="checkbox"  name="selected_menus[]" value="<?php echo $row['idthucdon'] ?>" autocomplete="off">Đặt món
+																</label>
 															</div>
 	                                                    </div>
 	                                                </div>
@@ -261,97 +361,15 @@
 				</div>
 			</div>
 		</div>
-          <a href="thucdon.php" style="color: black;">
-            <button class="btn btn-primary btn-icon" style="margin-left: 700px ;background-color: #F3D302">
-              <img src="Design/images/menu.svg" alt="menu icon">
-              Xem thêm
-            </button>
-          </a>
+        
 	</section>
+ 
 
 
 
-	<!-- CONTACT US SECTION -->
-
-	<section class="contact-section" id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 sm-padding">
-                    <div class="contact-info">
-                        <h2>
-						Hãy liên lạc với chúng tôi và
-							<br>gửi tin nhắn cho chúng tôi ngay hôm nay!
-                        </h2>
-                        <p>
-						"Chúng tôi thành lập tập đoàn này không chỉ để kiếm tiền,
-						 <br> mà còn để tạo ra những sản phẩm và dịch vụ tốt nhất cho cộng đồng."
-                        </p>
-                        <h3>
-                            Số 4, Nguyễn Văn Bảo, Phường 4, Gò Vấp
-                        </h3>
-                        <h4>
-                            <span>Email:</span> 
-                            <p>tapdoanvotri6789@gmail.com</p>
-                            <br> 
-                            <span>Phone:</span> 
-                            <p>0123467899</p>
-                        </h4>
-                    </div>
-                </div>
-                <div class="col-lg-6 sm-padding">
-				<b>ĐỀ XUẤT</b>
-                    <div class="contact-form">
-					
-                        <div id="contact_ajax_form" class="contactForm">
-							
-                            <div class="form-group colum-row row">
-                                <div class="col-sm-6">
-                                    <input type="text" id="contact_name" name="name" oninput="document.getElementById('invalid-name').innerHTML = ''" onkeyup="this.value=this.value.replace(/[^\sa-zA-Z]/g,'');" class="form-control" placeholder="Name">
-                                    <div class="invalid-feedback" id="invalid-name" style="display: block">
-                                    	
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="email" id="contact_email" name="email" oninput="document.getElementById('invalid-email').innerHTML = ''" class="form-control" placeholder="Email">
-                                    <div class="invalid-feedback" id="invalid-email" style="display: block">
-                                    	
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-12">
-                                    <input type="text" id="contact_subject" name="subject" oninput="document.getElementById('invalid-subject').innerHTML = ''" onkeyup="this.value=this.value.replace(/[^\sa-zA-Z]/g,'');" class="form-control" placeholder="Subject">
-                                    <div class="invalid-feedback" id="invalid-subject" style="display: block">
-                                    	
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-12">
-                                    <textarea id="contact_message" name="message" oninput="document.getElementById('invalid-message').innerHTML = ''" cols="30" rows="5" class="form-control message" placeholder="Message"></textarea>
-                                    <div class="invalid-feedback" id="invalid-message" style="display: block">
-                                    	
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-12">
-                                    <button id="contact_send" class="bttn_style_2">Send Message</button>
-                                </div>
-                            </div>
-                            <div id="sending_load" style="display: none;">Sending...</div>
-                            <div id="contact_status_message"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-	
 	<!-- WIDGET SECTION / FOOTER -->
 
-    <section class="widget_section" style="background-color: #222227;padding: 100px 0;">
+     <section class="widget_section" style="background-color: #222227;padding: 100px 0;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
@@ -418,8 +436,3 @@
     <!-- FOOTER BOTTOM  -->
 
     <?php include "Includes/templates/footer.php"; ?>
-
-		<script src="Design/js/jquery.min.js"></script>
-		<script src="Design/js/bootstrap.min.js"></script>
-		<script src="Design/js/bootstrap.bundle.min.js"></script>
-		<script src="Design/js/main.js"></script>
