@@ -11,7 +11,6 @@
 							 Bản quyền thuộc về nhóm Vô Tri
 						</div>
 					</div>
-					
 				</div>
 			</div>
 		</footer>

@@ -25,8 +25,8 @@
         float:left;
     }
     .tv table td img{
-        width: 100%;
-        height: 100%;
+        width: 75%;
+        height: 75%;
         border-radius: 50%;
     }
     .tv table td h3{
@@ -75,27 +75,29 @@
         <table>
             <tr>
                 <td>
-                    <img src="Design/images/img_1.jpg" alt="">
+                    <img src="Design/images/hieu.jpg" alt="">
                     <h3>ĐẶNG NGỌC HIẾU</h3>
+                   
+                    
                 </td>
                 <td>
-                    <img src="Design/images/img_1.jpg" alt="">
+                    <img src="Design/images/doan.jpg" alt="">
                     <h3>BÙI THỤC ĐOAN</h3>
                 </td>
                 <td>
-                    <img src="Design/images/img_1.jpg" alt="">
+                    <img src="Design/images/vu.jpg" alt="">
                     <h3>NGUYỄN THANH VŨ</h3>
                 </td>
                 <td>
-                    <img src="Design/images/img_1.jpg" alt="">
+                    <img src="Design/images/HieuDuong.jpg" alt="">
                     <h3>DƯƠNG CÔNG HIẾU</h3>
                 </td>
                 <td>
-                    <img src="Design/images/img_1.jpg" alt="">
+                    <img src="Design/images/hung.jpg" alt="">
                     <h3>NGUYỄN HOÀNG HƯNG</h3>
                 </td>
                 <td>
-                    <img src="Design/images/img_1.jpg" alt="">
+                    <img src="Design/images/user.jpg" alt="">
                     <h3>NGUYỄN MINH ÂN</h3>
                 </td>
             
